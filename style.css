@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --bg-color: #111; /* Dark background */
+  --text-color: #fff; /* White text */
+  --main-color: #306fd4; /* Neon pink */
+  --accent-color: #306fd4; /* Neon green */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2rem;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+h3,
+header,
+ul {
+  margin-bottom: 0.5rem;
+}
+
+main {
+  max-width: 400px;
+  margin: 1rem auto;
+  background-color: #000; /* Adjusted for better contrast */
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Added depth to the main container */
+}
+
+header {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px; /* Rounded corners */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header div {
+  padding: 10px; /* Increased padding for better spacing */
+}
+
+header div:first-child {
+  flex-basis: 100%;
+  font-size: 2.5rem; /* Larger font size */
+  font-weight: 600;
+}
+
+header div:nth-child(n + 2) {
+  flex-basis: 50%;
+  font-size: 1.5rem; /* Larger font size */
+  font-weight: 500;
+}
+
+header h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-color); /* Neon green */
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+form input:not(#type),
+form button {
+  width: 100%;
+  padding: 12px; /* Increased padding */
+  border: 1px solid #fff; /* White border */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 10px; /* Increased margin */
+  height: 48px; /* Increased height */
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem; /* Larger font size */
+  background-color: transparent; /* Transparent background */
+  color: #fff; /* White text */
+}
+
+form button {
+  background-color: var(--accent-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+form label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-color); /* Neon green */
+}
+
+form div:nth-child(-n + 2) {
+  flex-basis: 100%;
+}
+
+form div:nth-child(n + 3) {
+  flex-basis: calc(50% - 5px);
+}
+
+input#type {
+  appearance: none;
+  position: absolute;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  border-radius: 8px; /* Rounded corners */
+  position: relative;
+}
+
+.option span {
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.option::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  height: calc(100% - 10px);
+  width: calc(50% - 10px);
+  transform: translateX(5px);
+  border-radius: inherit;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  transition: all 200ms;
+}
+
+input#type:checked ~ .option::before {
+  left: 50%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center vertically */
+  padding: 10px;
+  position: relative;
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+ul li:hover {
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+}
+
+.name h4 {
+  font-size: 1.2rem; /* Larger font size */
+  font-weight: 600;
+  text-transform: capitalize;
+  color: var(--main-color); /* Neon pink */
+}
+
+.name p {
+  font-size: 1rem; /* Larger font size */
+  color: #aaa; /* Lighter text color */
+}
+
+.amount {
+  font-weight: 600;
+  font-size: 1.2rem; /* Larger font size */
+}
+
+.amount.income {
+  color: var(--accent-color);
+}
+
+.amount.expense {
+  color: var(--main-color);
+}
+
+.action {
+  background-color: var(--main-color);
+  color: #fff;
+  height: 100%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 8px 8px 0; /* Rounded corners */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: all 300ms;
+}
+
+ul li:hover .action {
+  transform: scaleX(1);
+}
+
+.action svg {
+  width: 24px; /* Smaller icon size */
+  fill: #fff; /* White color */
+}
+
+#status {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
